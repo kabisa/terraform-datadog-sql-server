@@ -8,7 +8,7 @@ locals {
 module "procs_blocked" {
   source = "git@github.com:kabisa/terraform-datadog-generic-monitor.git?ref=0.6.2"
 
-  name  = "SQL Server - Lock waits"
+  name  = "SQL Server - Blocked processes"
   query = "avg(${var.procs_blocked_evaluation_period}):max:sqlserver.stats.procs_blocked{${local.procs_blocked_filter}} by {host} >= ${var.procs_blocked_critical}"
 
   alert_message    = "Procs blocked on {{host.name}} has increased above {{threshold}} per second ({{value}} per second)"
