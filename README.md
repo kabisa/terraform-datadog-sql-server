@@ -1,4 +1,4 @@
-# terraform datadog sql server monitoring
+# terraform datadog SQL Server monitoring
 
 ## Getting Started
 
