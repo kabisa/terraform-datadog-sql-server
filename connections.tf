@@ -8,7 +8,7 @@ locals {
 module "connections" {
   source = "git@github.com:kabisa/terraform-datadog-generic-monitor.git?ref=0.6.2"
 
-  name  = "SQL Server - Blocked processes"
+  name  = "SQL Server - Connections"
   query = "avg(${var.connections_evaluation_period}):max:sqlserver.stats.connections{${local.connections_filter}} by {host} >= ${var.connections_critical}"
 
   alert_message    = "Unusual high number of SQL Server connections on {{host.name}} has increased above {{threshold}} current connection count: ({{value}}"
