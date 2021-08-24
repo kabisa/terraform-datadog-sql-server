@@ -1,4 +1,4 @@
-# terraform-module-template
+# terraform datadog sql server monitoring
 
 ## Getting Started
 
