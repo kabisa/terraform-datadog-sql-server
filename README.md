@@ -10,6 +10,30 @@ It has basic SQL Server monitoring. Locks, process blocked, connectivity.
 It's best to also use Datadog's APM instrumentation to understand the way the application is using the database.
 There's an upcoming feature in Datadog to fully support deep dive database monitoring.
 
+This module is part of a larger suite of modules that provide alerts in Datadog.
+Other modules can be found on the [Terraform Registry](https://registry.terraform.io/search/modules?namespace=kabisa&provider=datadog)
+
+We have two base modules we use to standardise development of our Monitor Modules:
+- [generic monitor](https://github.com/kabisa/terraform-datadog-generic-monitor) Used in 90% of our alerts
+- [service check monitor](https://github.com/kabisa/terraform-datadog-service-check-monitor)
+
+Modules are generated with this tool: https://github.com/kabisa/datadog-terraform-generator
+
+# Example Usage
+
+```terraform
+module "kubernetes" {
+  source = "kabisa/sql-server/datadog"
+
+  notification_channel       = "mail@example.com"
+  service                    = "SQL Server"
+  env                        = "prd"
+  alert_env                  = "prd"
+  filter_str                 = "role:sqlserver"
+  service_check_include_tags = ["role:sqlserver"]
+}
+```
+
 Monitors:
 * [Terraform module for Datadog Sql Server](#terraform-module-for-datadog-sql-server)
   * [Connections](#connections)
