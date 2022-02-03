@@ -1,4 +1,4 @@
-module "kubernetes" {
+module "sql_server" {
   source = "kabisa/sql-server/datadog"
 
   notification_channel       = "mail@example.com"

@@ -22,7 +22,7 @@ Modules are generated with this tool: https://github.com/kabisa/datadog-terrafor
 # Example Usage
 
 ```terraform
-module "kubernetes" {
+module "sql_server" {
   source = "kabisa/sql-server/datadog"
 
   notification_channel       = "mail@example.com"
