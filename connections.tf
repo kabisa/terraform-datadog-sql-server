@@ -6,7 +6,8 @@ locals {
 }
 
 module "connections" {
-  source = "git@github.com:kabisa/terraform-datadog-generic-monitor.git?ref=0.6.2"
+  source  = "kabisa/generic-monitor/datadog"
+  version = "0.7.5"
 
   name  = "SQL Server - Connections"
   query = "avg(${var.connections_evaluation_period}):max:sqlserver.stats.connections{${local.connections_filter}} by {host} >= ${var.connections_critical}"

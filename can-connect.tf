@@ -1,8 +1,9 @@
 module "can_connect" {
-  source = "git@github.com:kabisa/terraform-datadog-service-check-monitor.git?ref=1.2.0"
+  source  = "kabisa/service-check-monitor/datadog"
+  version = "1.4.1"
 
   name         = "SQL Server - Can connect"
-  check_name   = "sqlserver.can_connect"
+  metric_name  = "sqlserver.can_connect"
   by_tags      = ["host", "db"]
   include_tags = local.service_check_include_tags
   exclude_tags = local.service_check_exclude_tags

@@ -6,7 +6,8 @@ locals {
 }
 
 module "database_state" {
-  source = "git@github.com:kabisa/terraform-datadog-generic-monitor.git?ref=0.6.2"
+  source  = "kabisa/generic-monitor/datadog"
+  version = "0.7.5"
 
   name  = "SQL Server - Database state"
   query = "max(${var.database_state_evaluation_period}):max:sqlserver.database.state{${local.database_state_filter}} by {host,database,database_state_desc} >= ${var.database_state_critical}"

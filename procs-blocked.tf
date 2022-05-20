@@ -6,7 +6,8 @@ locals {
 }
 
 module "procs_blocked" {
-  source = "git@github.com:kabisa/terraform-datadog-generic-monitor.git?ref=0.6.2"
+  source  = "kabisa/generic-monitor/datadog"
+  version = "0.7.5"
 
   name  = "SQL Server - Blocked processes"
   query = "avg(${var.procs_blocked_evaluation_period}):max:sqlserver.stats.procs_blocked{${local.procs_blocked_filter}} by {host} >= ${var.procs_blocked_critical}"

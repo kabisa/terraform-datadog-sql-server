@@ -6,7 +6,8 @@ locals {
 }
 
 module "buffer_cache_hit_ratio" {
-  source = "git@github.com:kabisa/terraform-datadog-generic-monitor.git?ref=0.6.2"
+  source  = "kabisa/generic-monitor/datadog"
+  version = "0.7.5"
 
   name  = "SQL Server - Buffer cache hit ratio"
   query = "avg(${var.buffer_cache_hit_ratio_evaluation_period}):min:sqlserver.buffer.cache_hit_ratio{${local.buffer_cache_hit_ratio_filter}} by {host} * 100 < ${var.buffer_cache_hit_ratio_critical}"
