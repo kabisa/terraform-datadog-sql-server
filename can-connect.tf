@@ -21,7 +21,7 @@ module "can_connect" {
   note               = var.can_connect_note
 
   # module level vars
-  env                  = var.alert_env
+  env                  = var.env
   service              = var.service
   notification_channel = var.notification_channel
   additional_tags      = var.additional_tags

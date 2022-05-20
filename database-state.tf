@@ -25,7 +25,7 @@ module "database_state" {
   note               = var.database_state_note
 
   # module level vars
-  env                  = var.alert_env
+  env                  = var.env
   service              = var.service
   notification_channel = var.notification_channel
   additional_tags      = var.additional_tags
