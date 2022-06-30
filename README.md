@@ -222,7 +222,6 @@ avg(last_10m):max:sqlserver.stats.procs_blocked{tag:xxx} by {host} >= 1
 | variable                   | default  | required | description  |
 |----------------------------|----------|----------|--------------|
 | env                        |          | Yes      |              |
-| alert_env                  |          | Yes      |              |
 | filter_str                 |          | Yes      |              |
 | service                    |          | Yes      |              |
 | notification_channel       |          | Yes      |              |

@@ -2,10 +2,6 @@ variable "env" {
   type = string
 }
 
-variable "alert_env" {
-  type = string
-}
-
 variable "filter_str" {
   type = string
 }

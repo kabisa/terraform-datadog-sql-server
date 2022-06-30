@@ -6,7 +6,8 @@ locals {
 }
 
 module "batches_compiled_percent" {
-  source = "git@github.com:kabisa/terraform-datadog-generic-monitor.git?ref=0.6.2"
+  source  = "kabisa/generic-monitor/datadog"
+  version = "0.7.5"
 
   name  = "SQL Server - Percentage of batches requiring compilation"
   query = "avg(${var.batches_compiled_percent_evaluation_period}):(max:sqlserver.stats.sql_compilations{${local.batches_compiled_percent_filter}} by {host} / max:sqlserver.stats.batch_requests{${local.batches_compiled_percent_filter}} by {host}) * 100 >= ${var.batches_compiled_percent_critical}"
@@ -24,7 +25,7 @@ module "batches_compiled_percent" {
   note               = var.batches_compiled_percent_note
 
   # module level vars
-  env                  = var.alert_env
+  env                  = var.env
   service              = var.service
   notification_channel = var.notification_channel
   additional_tags      = var.additional_tags

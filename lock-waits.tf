@@ -6,7 +6,8 @@ locals {
 }
 
 module "lock_waits" {
-  source = "git@github.com:kabisa/terraform-datadog-generic-monitor.git?ref=0.6.2"
+  source  = "kabisa/generic-monitor/datadog"
+  version = "0.7.5"
 
   name  = "SQL Server - Lock waits"
   query = "avg(${var.lock_waits_evaluation_period}):max:sqlserver.stats.lock_waits{${local.lock_waits_filter}} by {host} > ${var.lock_waits_critical}"
@@ -24,7 +25,7 @@ module "lock_waits" {
   note               = var.lock_waits_note
 
   # module level vars
-  env                  = var.alert_env
+  env                  = var.env
   service              = var.service
   notification_channel = var.notification_channel
   additional_tags      = var.additional_tags
