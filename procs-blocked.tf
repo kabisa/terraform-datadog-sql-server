@@ -7,7 +7,7 @@ locals {
 
 module "procs_blocked" {
   source  = "kabisa/generic-monitor/datadog"
-  version = "0.7.5"
+  version = "1.0.0"
 
   name  = "SQL Server - Blocked processes"
   query = "avg(${var.procs_blocked_evaluation_period}):max:sqlserver.stats.procs_blocked{${local.procs_blocked_filter}} by {host} >= ${var.procs_blocked_critical}"

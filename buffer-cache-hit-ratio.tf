@@ -7,7 +7,7 @@ locals {
 
 module "buffer_cache_hit_ratio" {
   source  = "kabisa/generic-monitor/datadog"
-  version = "0.7.5"
+  version = "1.0.0"
 
   name  = "SQL Server - Buffer cache hit ratio"
   query = "avg(${var.buffer_cache_hit_ratio_evaluation_period}):min:sqlserver.buffer.cache_hit_ratio{${local.buffer_cache_hit_ratio_filter}} by {host} * 100 < ${var.buffer_cache_hit_ratio_critical}"
