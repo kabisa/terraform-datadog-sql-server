@@ -7,7 +7,7 @@ locals {
 
 module "lock_waits" {
   source  = "kabisa/generic-monitor/datadog"
-  version = "0.7.5"
+  version = "1.0.0"
 
   name  = "SQL Server - Lock waits"
   query = "avg(${var.lock_waits_evaluation_period}):max:sqlserver.stats.lock_waits{${local.lock_waits_filter}} by {host} > ${var.lock_waits_critical}"

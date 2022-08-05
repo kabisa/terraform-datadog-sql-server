@@ -1,6 +1,6 @@
 module "can_connect" {
   source  = "kabisa/service-check-monitor/datadog"
-  version = "1.4.1"
+  version = "2.0.0"
 
   name         = "SQL Server - Can connect"
   metric_name  = "sqlserver.can_connect"

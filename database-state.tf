@@ -7,7 +7,7 @@ locals {
 
 module "database_state" {
   source  = "kabisa/generic-monitor/datadog"
-  version = "0.7.5"
+  version = "1.0.0"
 
   name  = "SQL Server - Database state"
   query = "max(${var.database_state_evaluation_period}):max:sqlserver.database.state{${local.database_state_filter}} by {host,database,database_state_desc} >= ${var.database_state_critical}"

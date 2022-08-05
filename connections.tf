@@ -7,7 +7,7 @@ locals {
 
 module "connections" {
   source  = "kabisa/generic-monitor/datadog"
-  version = "0.7.5"
+  version = "1.0.0"
 
   name  = "SQL Server - Connections"
   query = "avg(${var.connections_evaluation_period}):max:sqlserver.stats.connections{${local.connections_filter}} by {host} >= ${var.connections_critical}"
