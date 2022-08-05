@@ -3,9 +3,10 @@
 
 provider "registry.terraform.io/datadog/datadog" {
   version     = "3.14.0"
-  constraints = "~> 3.4, ~> 3.12"
+  constraints = "~> 3.12"
   hashes = [
     "h1:XT4XAEhvyLEdbZvQ6eiqEga2qdZAfTcMz6bn4lcOkPg=",
+    "h1:beaueTgNRWkhDW1smCk6DJnx+j89dU4SQ7ICZCWaX2M=",
     "zh:198d42b9b47d48f674d49727046e7c67fa6807b244d76df03f13fc7ef0e8952d",
     "zh:25cae226fde9223f1152df37d21cc0806f5e8dce9eafc3e0cdfa9939018d57f7",
     "zh:3d048265d86052e46efa09705d33f6f11a44c11961c93e85b8fec6a063652631",
